@@ -23,13 +23,13 @@ const highlights = [
   { icon: ImageIcon, title: 'AI-Powered Workflow', text: 'ChatGPT product content and image creation' },
 ];
 
-const fadeUp = { hidden: { opacity: 0, y: 26 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } } };
+const fadeUp = { hidden: { opacity: 0, y: 26 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] as const } } };
 const stagger = { hidden: {}, visible: { transition: { staggerChildren: 0.1 } } };
 
 export default function NoonSellerTrainingPage() {
   return (
     <>
-      <style jsx global>{`
+      <style>{`
         .noon-page{--yellow:#ffe800;--ink:#171717;--muted:#656565;--line:#e8e5d8;background:#fffef8;color:var(--ink);min-height:100vh;font-family:Arial,Helvetica,sans-serif}
         .noon-page *{box-sizing:border-box}.noon-wrap{width:min(1160px,calc(100% - 40px));margin:auto}
         .noon-header{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:16px;border-bottom:1px solid var(--line)}
@@ -189,7 +189,7 @@ export default function NoonSellerTrainingPage() {
             </motion.div>
             <div className="noon-journey">
               <motion.article className="noon-week" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}><span className="noon-week-label">Weeks 1–3 · Live training</span><h3>Learn with an instructor</h3><p>Attend three live sessions per week covering Seller Lab, listing workflows, AI tools, fulfillment, finance, and seller operations.</p><ul><li>Sunday, Tuesday & Thursday</li><li>8:00 PM – 9:00 PM KSA</li><li>9 instructor-led sessions in total</li></ul></motion.article>
-              <motion.article className="noon-week featured" initial="hidden" whileInView="visible" viewport={{ once: true, delay: .1 }} variants={fadeUp}><span className="noon-week-label">Week 4 · Practical assignment week</span><h3>Apply what you learned</h3><p>No scheduled live classes this week. Complete independent assignments and submit your work for trainer review and feedback.</p><ul><li>Research five products and draft listings</li><li>Create AI-assisted content and visuals</li><li>Prepare a bulk listing spreadsheet</li><li>Audit listing quality and complete inventory and profitability exercises</li></ul></motion.article>
+              <motion.article className="noon-week featured" initial="hidden" whileInView="visible" viewport={{ once: true }} transition={{ delay: 0.1 }} variants={fadeUp}><span className="noon-week-label">Week 4 · Practical assignment week</span><h3>Apply what you learned</h3><p>No scheduled live classes this week. Complete independent assignments and submit your work for trainer review and feedback.</p><ul><li>Research five products and draft listings</li><li>Create AI-assisted content and visuals</li><li>Prepare a bulk listing spreadsheet</li><li>Audit listing quality and complete inventory and profitability exercises</li></ul></motion.article>
             </div>
           </div></section>
 
